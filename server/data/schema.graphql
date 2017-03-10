@@ -1,0 +1,46 @@
+# This defines the types in the schema which
+# are responsible for handling queries and mutations
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+# Fields on this type are accessible at the root of
+# a query
+type Query {
+  authors: [Author]
+  books: [Book]
+  bookByID(id: String): Book
+  bookSearch(keyword: String): [Book]
+}
+
+# This is the type that handles mutations
+type Mutation {
+  addBook(book: BookInput): Book
+}
+
+type Author {
+  id: String
+  name: String
+  image: String
+  books: [Book]
+}
+
+type Book {
+  id: String
+  title: String
+  image: String
+  authorId: String
+  description: String
+  author: Author
+}
+
+# This is an input type, which specifies the
+# shape of the arguments to the "addBook" function
+input BookInput {
+  id: String
+  title: String
+  image: String
+  description: String
+  authorId: String
+}

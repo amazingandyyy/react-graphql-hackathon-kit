@@ -54,7 +54,7 @@
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": [
-      "airbnb/base",
+      "eslint:recommended",
       "plugin:import/errors"
     ],
     "rules": {
@@ -64,7 +64,9 @@
       "no-console": 0
     },
     "env": {
-      "mocha": true
+      "mocha": true,
+      "node": true,
+      "es6": true
     }
   }
 }
