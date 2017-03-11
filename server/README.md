@@ -1,6 +1,6 @@
 # Hackathon starter server
 
-This is a really simple GraphQL server that uses the [Apollo GraphQL Server](https://github.com/apollographql/graphql-server) and [GraphQL Tools](https://github.com/apollographql/graphql-tools) to create and serve a simple schema.
+This is a basic GraphQL server that uses the [Apollo GraphQL Server](https://github.com/apollographql/graphql-server) and [GraphQL Tools](https://github.com/apollographql/graphql-tools) to create and serve a simple schema.
 
 It uses a very simple in-memory data structure, so if you restart the server or change the code, the data will reset. You might want to extend this to use a real database for your project.
 
