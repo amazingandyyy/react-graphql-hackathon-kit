@@ -6,7 +6,8 @@ Build a quick hackathon app with React and GraphQL
 
 This project has two parts:
 
-1. `/server` is a simple GraphQL server built with Node, Babel, GraphQL.js, and graphql-tools
-1. `/client` is an app built with Create React App, React Router 4, and Apollo Client
+1. [/server](server) is a simple GraphQL server built with Node, Babel, GraphQL.js, and graphql-tools
+1. [/client](client) is an app built with Create React App, React Router, and Apollo Client
+
 
 
