@@ -32,3 +32,5 @@ npm start
 To learn about how the client and server work, dive into their respective READMEs!
 
 If you would like to ask people in the Apollo community some questions, feel free to join the [Apollo community Slack](http://dev.apollodata.com/#slack).
+
+Also, if you're going to be developing with Apollo Client, you might want to install the [Apollo Client devtools](https://dev-blog.apollodata.com/apollo-client-developer-tools-ff89181ebcf)!

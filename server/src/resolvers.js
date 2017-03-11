@@ -40,7 +40,7 @@ const resolveFunctions = {
     // In this case, that's a book object, and this
     // resolver's job is to get right correct author.
     author(book) {
-      return authors[book.authorId];
+      return authors.filter(author => book.authorId === author.id)[0];
     }
   },
   Author: {
