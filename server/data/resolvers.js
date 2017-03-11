@@ -1,4 +1,3 @@
-import { find } from 'lodash';
 import { authors, books } from './db';
 
 // Resolvers are like mini router handlers that
