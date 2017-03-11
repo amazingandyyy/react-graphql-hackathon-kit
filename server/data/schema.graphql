@@ -10,7 +10,7 @@ schema {
 type Query {
   authors: [Author]
   books: [Book]
-  bookByID(id: String): Book
+  bookByID(id: Int): Book
   bookSearch(keyword: String): [Book]
 }
 
@@ -20,14 +20,14 @@ type Mutation {
 }
 
 type Author {
-  id: String
+  id: Int
   name: String
   image: String
   books: [Book]
 }
 
 type Book {
-  id: String
+  id: Int
   title: String
   image: String
   authorId: String
@@ -38,7 +38,7 @@ type Book {
 # This is an input type, which specifies the
 # shape of the arguments to the "addBook" function
 input BookInput {
-  id: String
+  id: Int
   title: String
   image: String
   description: String

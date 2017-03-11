@@ -20,10 +20,10 @@ const resolveFunctions = {
 
     // These resolvers take arguments
     bookByID(_, args) {
-      return books.find(book => `book-${book.id}` == args.id);
+      return books.find(book => book.id === args.id);
     },
     bookSearch(_, args) {
-      return books.filter(book => book.title.includes(args.keyword));
+      return books.filter(book => book.title.toLowerCase().includes(args.keyword.toLowerCase()));
     }
   },
   Mutation: {

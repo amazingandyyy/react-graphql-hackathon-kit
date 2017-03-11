@@ -18,7 +18,7 @@ const BookDetails = ({ data: { loading, bookByID } }) => {
 };
 
 export default graphql(gql`
-  query BookDetailsQuery($bookId: String!) {
+  query BookDetailsQuery($bookId: Int!) {
     bookByID(id: $bookId) {
       id
       title
@@ -33,6 +33,6 @@ export default graphql(gql`
 `, {
   // These params come from React Router's URL pattern
   options: ({ params }) => {
-    return { variables: { bookId: params.bookId } }
+    return { variables: { bookId: parseInt(params.bookId, 10) } }
   },
 })(BookDetails);
