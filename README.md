@@ -30,3 +30,5 @@ npm start
 ### Learn more
 
 To learn about how the client and server work, dive into their respective READMEs!
+
+If you would like to ask people in the Apollo community some questions, feel free to join the [Apollo community Slack](http://dev.apollodata.com/#slack).
