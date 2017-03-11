@@ -16,3 +16,14 @@ npm start
 ```
 
 The server will run on port 8080. You can change this by editing `server.js`.
+
+## Architecture
+
+The structure of this app is very simple. It's built according to the principles of the [graphql-tools](http://dev.apollodata.com/tools/graphql-tools/index.html) library, so you can consult that guide for more details.
+
+There are only 4 relevant files:
+
+- In [`src/schema.graphql`](src/schema.graphql), we use the [GraphQL schema language](http://graphql.org/learn/schema/) to define a schema for our API. Compared to REST, this is kind of like the route or resource definition.
+- In [`src/resolvers.js`](src/resolvers.js), we define [resolve functions](http://dev.apollodata.com/tools/graphql-tools/resolvers.html) that are used by the schema to actually retrieve the data. This is like our controller methods. We load the data from a fake set of objects in [`src/db.js`](src/db.js), which could be replaced with a database or an external API.
+- In [`src/schema.js`](src/schema.js), we put everything together into a schema object.
+- In [`server.js`](server.js), we attach the schema to an Express web server. This is where you could add additional middleware to do authentication using something like Passport. Check out our [more complete example app](https://github.com/apollographql/GitHunt-API/blob/master/api/server.js) for how to do that.

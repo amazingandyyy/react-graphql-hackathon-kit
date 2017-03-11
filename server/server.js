@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import { printSchema } from 'graphql/utilities/schemaPrinter';
 
-import schema from './data/schema';
+import schema from './src/schema';
 
 const GRAPHQL_PORT = 8080;
 
