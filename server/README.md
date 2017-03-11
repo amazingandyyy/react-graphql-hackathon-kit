@@ -4,7 +4,7 @@ This is a basic GraphQL server that uses the [Apollo GraphQL Server](https://git
 
 It uses an in-memory data structure as a stand-in for a database, so if you restart the server or change the code, the data will reset. You might want to extend this to use a real database for your project.
 
-You can also build your server using a GraphQL-as-a-service provider, for example [Graphcool](https://www.graph.cool/).
+If you don't want to spend time writing server code, you can also build your server using a GraphQL-as-a-service provider, for example [Graphcool](https://www.graph.cool/)!
 
 ## Starting the server
 
