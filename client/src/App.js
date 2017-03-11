@@ -1,19 +1,46 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import ApolloClient, { createNetworkInterface } from 'apollo-client';
+import { ApolloProvider } from 'react-apollo';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+
 import './App.css';
 
+import BookSearch from './BookSearch';
+import BookDetails from './BookDetails';
+
+const Layout = ({ children }) => (
+  <div>{ children }</div>
+);
+
+// Replace this Uri with your GraphQL server Uri
+const serverUri = 'http://localhost:8080/graphql';
+
 class App extends Component {
+  constructor(...args) {
+    super(...args);
+
+    const networkInterface = createNetworkInterface({
+      uri: serverUri,
+      opts: { cors: true },
+    });
+
+    this.client = new ApolloClient({
+      networkInterface,
+
+      // Our backend has unique IDs, so we should use them for cache consistency
+      dataIdFromObject: r => r.id,
+    });
+  }
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <ApolloProvider client={this.client}>
+        <Router history={browserHistory}>
+          <Route path="/" component={Layout}>
+            <IndexRoute component={BookSearch} />
+            <Route path="/details/:bookId" component={BookDetails} />
+          </Route>
+        </Router>
+      </ApolloProvider>
     );
   }
 }
