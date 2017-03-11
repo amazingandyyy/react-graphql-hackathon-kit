@@ -8,9 +8,11 @@ You can also build your server using a GraphQL-as-a-service provider, for exampl
 
 ## Starting the server
 
-```
+```sh
 npm install
 npm start
+# GraphQL Server is now running on http://localhost:8080/graphql
+# Visit GraphiQL to run queries in your browser: http://localhost:8080/graphiql
 ```
 
 The server will run on port 8080. You can change this by editing `server.js`.
