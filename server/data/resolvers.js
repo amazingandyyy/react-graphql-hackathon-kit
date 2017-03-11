@@ -43,6 +43,11 @@ const resolveFunctions = {
     author(book) {
       return authors[book.authorId];
     }
+  },
+  Author: {
+    books(author) {
+      return books.filter(book => book.authorId === author.id);
+    }
   }
 };
 
